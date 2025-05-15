@@ -7,13 +7,14 @@ add_definitions(-fpic)
 
 SET(BIFSDEC_SRC
         ${CMAKE_CURRENT_SOURCE_DIR}/dec_bifs.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/clock.c
 )
 
 SET(BIFSDEC_INC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-add_filter(bifdec
+add_filter(bifsdec
         "${BIFSDEC_SRC}"
         ""
         []
