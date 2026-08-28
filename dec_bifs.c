@@ -291,5 +291,10 @@ const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_bifs_dec_register(GF_Filt
 #endif /*GPAC_DISABLE_BIFS*/
 }
 
+#include "filter_register.h"
+__attribute__((constructor))
+void register_bifs_dec(void) {
+    gf_filter_auto_register("bifs_dec", dynCall_bifs_dec_register);
+}
 
 

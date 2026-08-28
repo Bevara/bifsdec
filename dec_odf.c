@@ -524,3 +524,9 @@ const GF_FilterRegister *dynCall_odf_dec_register(GF_FilterSession *session)
 	return NULL;
 }
 #endif // GPAC_DISABLE_COMPOSITOR
+
+#include "filter_register.h"
+__attribute__((constructor))
+void register_odf_dec(void) {
+    gf_filter_auto_register("odf_dec", dynCall_odf_dec_register);
+}
