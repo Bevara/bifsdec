@@ -282,7 +282,7 @@ GF_FilterRegister BIFSDecRegister = {
 
 #endif //!defined(GPAC_DISABLE_BIFS) && !defined(GPAC_DISABLE_COMPOSITOR)
 
-const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_bifs_dec_register(GF_FilterSession *session)
+const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE bifs_dec_register(GF_FilterSession *session)
 {
 #if !defined(GPAC_DISABLE_BIFS) && !defined(GPAC_DISABLE_COMPOSITOR)
 	return &BIFSDecRegister;
@@ -294,7 +294,7 @@ const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_bifs_dec_register(GF_Filt
 #include "filter_register.h"
 __attribute__((constructor))
 void register_bifs_dec(void) {
-    gf_filter_auto_register("bifs_dec", dynCall_bifs_dec_register);
+    gf_filter_auto_register("bifs_dec", bifs_dec_register);
 }
 
 

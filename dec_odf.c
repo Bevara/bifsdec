@@ -514,12 +514,12 @@ GF_FilterRegister ODFDecRegister = {
 	.hint_class_type = GF_FS_CLASS_DECODER
 };
 
-const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE dynCall_odf_dec_register(GF_FilterSession *session)
+const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE odf_dec_register(GF_FilterSession *session)
 {
 	return &ODFDecRegister;
 }
 #else
-const GF_FilterRegister *dynCall_odf_dec_register(GF_FilterSession *session)
+const GF_FilterRegister *odf_dec_register(GF_FilterSession *session)
 {
 	return NULL;
 }
@@ -528,5 +528,5 @@ const GF_FilterRegister *dynCall_odf_dec_register(GF_FilterSession *session)
 #include "filter_register.h"
 __attribute__((constructor))
 void register_odf_dec(void) {
-    gf_filter_auto_register("odf_dec", dynCall_odf_dec_register);
+    gf_filter_auto_register("odf_dec", odf_dec_register);
 }
