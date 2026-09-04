@@ -282,7 +282,7 @@ GF_FilterRegister BIFSDecRegister = {
 
 #endif //!defined(GPAC_DISABLE_BIFS) && !defined(GPAC_DISABLE_COMPOSITOR)
 
-const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE bifs_dec_register(GF_FilterSession *session)
+const GF_FilterRegister *bifsdec_register(GF_FilterSession *session)
 {
 #if !defined(GPAC_DISABLE_BIFS) && !defined(GPAC_DISABLE_COMPOSITOR)
 	return &BIFSDecRegister;
@@ -291,10 +291,12 @@ const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE bifs_dec_register(GF_FilterSessio
 #endif /*GPAC_DISABLE_BIFS*/
 }
 
+
+
+
+/*Bevara: side modules register their own filters at load time.*/
 #include "filter_register.h"
 __attribute__((constructor))
 void register_bifs_dec(void) {
-    gf_filter_auto_register("bifs_dec", bifs_dec_register);
+    gf_filter_auto_register("bifs_dec", bifsdec_register);
 }
-
-

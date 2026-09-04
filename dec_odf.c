@@ -171,7 +171,7 @@ void ODS_SetupOD(GF_Scene *scene, GF_ObjectDescriptor *od)
 				odm = NULL;
 				continue;
 			}
-
+			
 			if (odm->pid_id == esd->ESID) {
 				pid = odm->pid;
 				break;
@@ -514,19 +514,20 @@ GF_FilterRegister ODFDecRegister = {
 	.hint_class_type = GF_FS_CLASS_DECODER
 };
 
-const GF_FilterRegister * EMSCRIPTEN_KEEPALIVE odf_dec_register(GF_FilterSession *session)
+const GF_FilterRegister *odfdec_register(GF_FilterSession *session)
 {
 	return &ODFDecRegister;
 }
 #else
-const GF_FilterRegister *odf_dec_register(GF_FilterSession *session)
+const GF_FilterRegister *odfdec_register(GF_FilterSession *session)
 {
 	return NULL;
 }
 #endif // GPAC_DISABLE_COMPOSITOR
 
+/*Bevara: side modules register their own filters at load time.*/
 #include "filter_register.h"
 __attribute__((constructor))
 void register_odf_dec(void) {
-    gf_filter_auto_register("odf_dec", odf_dec_register);
+    gf_filter_auto_register("odf_dec", odfdec_register);
 }
