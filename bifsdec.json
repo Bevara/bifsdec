@@ -11,5 +11,6 @@
         "bifsdec" : "dec_bifs.c"
     },
     "Format": ["RGB"],
-    "licence_required":false
+    "licence_required":false,
+    "using": ["solver_1"]
 }
