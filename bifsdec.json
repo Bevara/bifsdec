@@ -11,6 +11,10 @@
         "bifsdec" : "dec_bifs.c"
     },
     "Format": ["RGB"],
-    "licence_required":false,
-    "using": ["solver_1"]
+    "using": ["solver_1"],
+    "patents": {
+        "status": "expired",
+        "note": "MPEG-4 Systems (BIFS), 1999",
+        "checked": "2026-10-16"
+    }
 }
