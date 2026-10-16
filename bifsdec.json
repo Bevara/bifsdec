@@ -1,5 +1,6 @@
 {
     "name": "bifsdec",
+    "version": "1.0.1",
     "description": "MPEG-4 BIFS decoder",
     "filters":["bifsdec"],
     "help": "This filter decodes MPEG-4 BIFS binary frames directly into the scene graph of the compositor.",
