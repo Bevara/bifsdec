@@ -2,17 +2,27 @@
     "name": "bifsdec",
     "version": "1.0.2",
     "description": "MPEG-4 BIFS decoder",
-    "filters":["bifsdec"],
+    "filters": [
+        "bifsdec"
+    ],
     "help": "This filter decodes MPEG-4 BIFS binary frames directly into the scene graph of the compositor.",
     "support": [
         "image"
     ],
-    "sources":"https://bevara.ddns.net/sources/bifsdecs.accessor",
-    "filter_source":{
-        "bifsdec" : "dec_bifs.c"
+    "sources": "https://bevara.ddns.net/sources/bifsdecs.accessor",
+    "filter_source": {
+        "bifsdec": "dec_bifs.c"
     },
-    "Format": ["RGB"],
-    "using": ["mm_solver_1.0.1", "mm_solver_1.0.2", "mm_solver_1.0.3", "mm_solver_1.0.4"],
+    "Format": [
+        "RGB"
+    ],
+    "using": [
+        "mm_solver_1.0.1",
+        "mm_solver_1.0.2",
+        "mm_solver_1.0.3",
+        "mm_solver_1.0.4",
+        "mm_solver_1.0.5"
+    ],
     "patents": {
         "status": "expired",
         "note": "MPEG-4 Systems (BIFS), 1999",
